@@ -1,5 +1,4 @@
 import os
-import shutil
 import zipfile
 
 def compress_and_move_files(source_folder, destination_folder):
