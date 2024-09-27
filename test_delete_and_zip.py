@@ -1,8 +1,14 @@
 import os
 import zipfile
 import shutil
+import datetime as dt
 
+hoy_mes = dt.date.today().month
+print(hoy_mes)
+hoy_dia = dt.date.today().day
+print(hoy_dia)
 def compress_and_move_files(source_folder, destination_folder):
+
     zip_filename = os.path.join(destination_folder, 'archivos_comprimidos.zip')
     
     with zipfile.ZipFile(zip_filename, 'w') as zipf:
@@ -33,8 +39,8 @@ def delete_oldest_file(folder):
     os.remove(oldest_file)
     print(f'El archivo más antiguo {oldest_file} ha sido eliminado.')
 
-source_folder = r'C:\Users\USER\Desktop\Test_archivos_prueba'  
-destination_folder = r'C:\Users\USER\Desktop\Test_zip'  
+source_folder = r'C:\Users\MERCA\Desktop\test_archivos'  
+destination_folder = r'C:\Users\MERCA\Desktop\Test_zip'  
 
 compress_and_move_files(source_folder, destination_folder)
 
