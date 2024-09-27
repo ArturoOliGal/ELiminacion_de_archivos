@@ -7,9 +7,14 @@ hoy_mes = dt.date.today().month
 print(hoy_mes)
 hoy_dia = dt.date.today().day
 print(hoy_dia)
+quincena=0
+if hoy_dia<16:
+    quincena=1
+else:
+    quincena=2
 def compress_and_move_files(source_folder, destination_folder):
-
-    zip_filename = os.path.join(destination_folder, 'archivos_comprimidos.zip')
+    nombre_archivo=f"respaldo_{hoy_mes}_{quincena}.zip"
+    zip_filename = os.path.join(destination_folder, nombre_archivo)
     
     with zipfile.ZipFile(zip_filename, 'w') as zipf:
         for root, dirs, files in os.walk(source_folder):
