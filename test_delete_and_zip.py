@@ -1,5 +1,6 @@
 import os
 import zipfile
+import shutil
 
 def compress_and_move_files(source_folder, destination_folder):
     zip_filename = os.path.join(destination_folder, 'archivos_comprimidos.zip')
